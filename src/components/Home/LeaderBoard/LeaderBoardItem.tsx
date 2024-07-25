@@ -1,5 +1,5 @@
 import { UserType } from "../../../library/types";
-import { useAuthContext } from "../../../library/firebase/firebaseAuth";
+import { useAuthContext } from "../../../library/AppAuthContext";
 
 export function LeaderBoardItem({
   player,
@@ -20,7 +20,7 @@ export function LeaderBoardItem({
   };
 
   const playerNameToShow = user
-    ? user.uid === player.id
+    ? user.id === player.id
       ? "You"
       : player.name
     : player.name;

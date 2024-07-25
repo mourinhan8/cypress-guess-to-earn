@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useAuthContext } from "../library/firebase/firebaseAuth";
+import { useAuthContext } from "../library/AppAuthContext";
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user } = useAuthContext();

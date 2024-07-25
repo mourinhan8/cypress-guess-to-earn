@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 import { UserType } from "../../../library/types";
-import { Database } from "../../../library/firebase/firebase";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { LeaderBoardItem } from "./LeaderBoardItem";
 
 export function LeaderBoard() {
   const [users, setUsers] = useState<UserType[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const userRef = collection(Database, "user");
-      const userQuery = query(userRef, orderBy("score", "desc"));
-      const data = await getDocs(userQuery);
-      setUsers(data.docs.map((doc) => ({ ...(doc.data() as UserType) })));
-    };
-    fetchData();
   }, []);
 
   return (
