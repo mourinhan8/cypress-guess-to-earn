@@ -26,5 +26,6 @@ dist-ssr
 /test-results/
 /playwright-report/
 /playwright/.cache/
+app.config.json
 
 yarn.lock
