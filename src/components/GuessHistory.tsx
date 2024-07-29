@@ -41,7 +41,7 @@ const records = [
 export function GuessHistory() {
   const { user } = useAuthContext()
   const [open, setOpen] = useState(false)
-  const [listGuessed, setListGuessed] = useState([])
+  const [_, setListGuessed] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
   const token = localStorage.getItem(APP_TOKEN_KEY)
 

@@ -10,7 +10,13 @@ export function Timer({ id }: { id?: string }) {
       if (timeRemaining > 0) {
         setGameState("countdown")
       } else {
-        setGameState("end", false, false, btcPrice, newBtcPrice, id)
+        setGameState(
+          "end",
+          // false,
+          // false,
+          btcPrice,
+          newBtcPrice,
+          id)
       }
     }, 1000);
 

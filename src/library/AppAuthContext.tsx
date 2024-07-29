@@ -2,7 +2,6 @@ import { useDisconnect } from "wagmi"
 import { User } from "../common/types"
 import { useContext, createContext, useState, useEffect } from "react"
 import { APP_TOKEN_KEY } from "../common/constants"
-import { displayToast } from "./toast-manager";
 import { useNavigate } from "react-router-dom";
 
 export type AuthContextProviderProps = {

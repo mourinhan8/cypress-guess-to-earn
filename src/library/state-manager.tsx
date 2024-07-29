@@ -16,8 +16,8 @@ type Store = {
   setIsGuessingByDay: (guessing: boolean) => void
   setGameState: (
     gameState: string,
-    isGuessingByMin?: boolean,
-    isGuessingByDay?: boolean,
+    // isGuessingByMin?: boolean,
+    // isGuessingByDay?: boolean,
     oldPrice?: number | null,
     newPrice?: number | null,
     id?: string
@@ -42,8 +42,8 @@ export const useStore = create<Store>((set) => {
     setIsGuessingByDay: (guessing) => set({ isGuessingByDay: guessing }),
     setGameState: (
       gameState,
-      isGuessingByMin,
-      isGuessingByDay,
+      // isGuessingByMin,
+      // isGuessingByDay,
       oldPrice,
       newPrice
     ) => {

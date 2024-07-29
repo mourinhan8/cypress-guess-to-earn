@@ -1,6 +1,5 @@
 import { useStore } from "../../library/state-manager"
 import { useState, useEffect } from "react"
-import { displayToast } from "../../library/toast-manager"
 import { APP_TOKEN_KEY } from "../../common/constants"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 

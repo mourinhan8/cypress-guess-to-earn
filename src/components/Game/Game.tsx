@@ -3,10 +3,10 @@ import {
   getBitcoinPrice,
   // initWebSocket
 } from "../../library/api-handler"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import { useStore } from "../../library/state-manager"
 import GoHomeButton from "./GoHomeButton"
-import { GuessButtons, Instructions, Price, UserInfo, Timer } from "."
+import { GuessButtons, Instructions, Price, UserInfo } from "."
 import io from "socket.io-client"
 import { APP_TOKEN_KEY } from "../../common/constants"
 import { displayToast } from "../../library/toast-manager"
@@ -16,7 +16,7 @@ const winSoundElement = new Audio(winSound)
 const loseSoundElement = new Audio(loseSound)
 export default function Game() {
   const { setBtcPrice, setNewBtcPrice } = useStore()
-  const { id } = useParams()
+  // const { id } = useParams()
   const socketRef = useRef<any>()
   const token = localStorage.getItem(APP_TOKEN_KEY)
 
