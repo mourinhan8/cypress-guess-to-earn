@@ -5,10 +5,11 @@ import { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Spinner } from "./components/Spinner/Spinner";
 import { createWeb3Modal } from "@web3modal/wagmi/react"
-import { defaultWagmiConfig } from "@web3modal/wagmi/react/config"
+import { defaultWagmiConfig,  } from "@web3modal/wagmi/react/config"
 import { WagmiProvider } from "wagmi"
 import { moonbeam } from "wagmi/chains"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { GuessHistory } from "./components/GuessHistory";
 
 // 0. Setup queryClient
 const queryClient = new QueryClient()
@@ -38,8 +39,6 @@ createWeb3Modal({
 
 const Game = lazy(() => import("./components/Game/Game"));
 const Home = lazy(() => import("./components/Home/Home"));
-const SignIn = lazy(() => import("./components/Authentication/SingIn"));
-const SignUp = lazy(() => import("./components/Authentication/SignUp"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
 export default function App() {
@@ -68,22 +67,6 @@ export default function App() {
               }
             />
             <Route
-              path="/sign-in"
-              element={
-                <Suspense fallback={<Spinner />}>
-                  <SignIn />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/sign-up"
-              element={
-                <Suspense fallback={<Spinner />}>
-                  <SignUp />
-                </Suspense>
-              }
-            />
-            <Route
               path="*"
               element={
                 <Suspense fallback={<Spinner />}>
@@ -92,6 +75,7 @@ export default function App() {
               }
             />
           </Routes>
+          <GuessHistory />
         </AuthContextProvider>
       </QueryClientProvider>
     </WagmiProvider>

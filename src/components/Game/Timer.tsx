@@ -1,23 +1,23 @@
 import { useEffect } from "react";
-import useStore from "../../library/state-manager";
+import { useStore } from "../../library/state-manager";
 
 export function Timer({ id }: { id?: string }) {
-  const { btcPrice, newBtcPrice, guess, timeRemaining, setGuessingState } =
+  const { btcPrice, newBtcPrice, timeRemaining, setGameState } =
     useStore();
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (timeRemaining > 0) {
-        setGuessingState("countdown");
+        setGameState("countdown")
       } else {
-        setGuessingState("guess", guess, btcPrice, newBtcPrice, id);
+        setGameState("end", false, false, btcPrice, newBtcPrice, id)
       }
     }, 1000);
 
     return () => {
       clearInterval(interval);
     };
-  }, [timeRemaining, guess, btcPrice, newBtcPrice]);
+  }, [timeRemaining, btcPrice, newBtcPrice]);
 
   return (
     <p aria-live="polite" className="font-semibold">

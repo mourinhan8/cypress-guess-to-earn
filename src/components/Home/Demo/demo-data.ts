@@ -32,7 +32,7 @@ export const gameFeatures = [
   {
     title: "💾 Score Saving",
     description:
-      "Google's Firebase is used to save your scores. So, even if you leave and come back later, your score will still be there.",
+      "Your scores will be saved in our database save. So, even if you leave and come back later, your score will still be there.",
   },
   {
     title: "🔄 Play Anytime",

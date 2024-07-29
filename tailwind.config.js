@@ -8,6 +8,8 @@ export default {
         yellowSecondary: "#cf9822",
         greenPrimary: "#82BF56",
         greenSecondary: "#5e8d3d",
+        bluePrimary: "#3399ff",
+        blueSecondary: "#0066ff",
         redPrimary: "#E74C3C",
         redSecondary: "#b83a2c",
         shadow: "[0px 2px 4px rgba(0, 0, 0, 0.25)]",

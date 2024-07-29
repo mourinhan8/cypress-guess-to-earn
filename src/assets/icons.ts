@@ -3,6 +3,7 @@ import {
   FiGithub as GithubIcon,
   FiCode as CodeIcon,
 } from "react-icons/fi";
+import { FaHistory as HistoryIcon } from "react-icons/fa";
 import {
   FaRegCopyright as CopyRightIcon
 } from "react-icons/fa6";
@@ -17,5 +18,6 @@ export {
   QuestionIcon,
   CloseIcon,
   SpinnerIcon,
-  CopyRightIcon
+  CopyRightIcon,
+  HistoryIcon
 };

@@ -1,11 +1,30 @@
 import { useEffect, useState } from "react";
-import { UserType } from "../../../library/types";
 import { LeaderBoardItem } from "./LeaderBoardItem";
+import { User } from "../../../common/types";
 
 export function LeaderBoard() {
-  const [users, setUsers] = useState<UserType[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const res = await fetch(
+          `${import.meta.env.VITE_APP_API_URL}/user/list-users`,
+          opts
+        );
+        const users = await res.json();
+        setUsers(users.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUsers();
   }, []);
 
   return (

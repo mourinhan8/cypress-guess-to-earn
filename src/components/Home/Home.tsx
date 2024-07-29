@@ -9,7 +9,7 @@ export default function Home() {
       <Banner />
       <div className="px-5">
         <Demo />
-        {/* <LeaderBoard /> */}
+        <LeaderBoard />
       </div>
       <Footer />
     </div>

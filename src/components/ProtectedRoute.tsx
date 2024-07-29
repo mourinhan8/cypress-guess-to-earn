@@ -1,11 +1,11 @@
 import { Navigate } from "react-router-dom";
-import { useAuthContext } from "../library/AppAuthContext";
+import { APP_TOKEN_KEY } from "../common/constants";
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { user } = useAuthContext();
+  const token = localStorage.getItem(APP_TOKEN_KEY);
 
-  if (!user) {
-    return <Navigate to="/" />;
+  if (!token) {
+    return <Navigate to="/" />
   }
   return children;
 }

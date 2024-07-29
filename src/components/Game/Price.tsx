@@ -1,4 +1,4 @@
-import useStore from "../../library/state-manager";
+import { useStore } from "../../library/state-manager";
 import "./animation.css";
 export function Price() {
   const { btcPrice, isFlashing } = useStore();
@@ -14,7 +14,7 @@ export function Price() {
   }
 
   return (
-    <div className="relative mx-auto bg-white max-w-4xl h-[180px] rounded-xl p-4 shadow-md flex justify-center mb-5 w-[400px] border">
+    <div className="relative mx-auto bg-white max-w-4xl h-[180px] rounded-xl mb-4 p-4 shadow-md flex justify-center w-[400px] border">
       <span className="absolute top-4 left-4 text-md font-semibold text-zinc-800">
         $CP price in USD
       </span>
@@ -23,8 +23,8 @@ export function Price() {
         id="bitcoin-price"
         className={`text-4xl text-center font-semibold my-auto pt-6 ${flashClass}`}
       >
-        {btcPrice ? btcPrice.toFixed(2) : "Loading..."}
+        {btcPrice ? btcPrice.toFixed(8) : "Loading..."}
       </span>
     </div>
-  );
+  )
 }
