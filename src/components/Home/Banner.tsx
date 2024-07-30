@@ -1,4 +1,4 @@
-import Image from "../../assets/bitcoin.png"
+import Image from "../../assets/logo-original.jpg"
 import { useAuthContext } from "../../library/AppAuthContext"
 import { useAccount, useDisconnect, useSignMessage } from "wagmi"
 import { useEffect, useState } from "react"
@@ -91,12 +91,16 @@ export function Banner() {
 
   return (
     <div className=" h-400 flex flex-col justify-center items-center gap-5 bg-zinc-800 shadow-xl py-10 h-svh">
-      <img src={Image} alt="Cypress" className="banner__image w-20 mb-5" />
+      <img
+        src={Image}
+        alt="Cypress"
+        className="banner__image w-40 mb-5 rounded-full"
+      />
       <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase leading-tight sm:leading-snug md:leading-normal tracking-wide">
         CYPRESS Guess to earn
       </h1>
       <h2 className="text-white font-medium text-lg tracking-wide">
-        Predict the Future of CYPRESS in Minutes
+        Predict the future of token $CP every minute!
       </h2>
       <button
         style={{ textShadow: "0px -2px #d7a83b" }}
@@ -106,7 +110,7 @@ export function Banner() {
             navigate(linkUrl)
           } else {
             if (isConnected) {
-              disconnect();
+              disconnect()
             }
             displayToast("error", "Please login first")
             navigate("/")
