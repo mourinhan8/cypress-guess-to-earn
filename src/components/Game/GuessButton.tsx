@@ -184,7 +184,7 @@ export function GuessButtons({ socket }: {socket: any}) {
   //     : "0px -2px #3150bd",
   // }
 
-  const buttonClassesMin = `relative px-5 py-2 m-2 float-left rounded-lg text-white text-lg shadow-md ease-in duration-200 w-full ${
+  const buttonClassesMin = `relative px-5 py-2 float-left rounded-lg text-white text-lg shadow-md ease-in duration-200 w-full ${
     isSelectedMinButton
       ? "bg-greenPrimary pointer-events-none opacity-80"
       : // : isGuessingByMin
@@ -202,7 +202,7 @@ export function GuessButtons({ socket }: {socket: any}) {
 
   return (
     <div className="border relative mx-auto bg-white w-[400px] h-[100px] rounded-xl p-4 shadow-md flex justify-between">
-      <div className="relative w-full">
+      <div className="relative w-full flex items-center">
         <button
           style={buttonStylesMin}
           aria-label="Guess"
