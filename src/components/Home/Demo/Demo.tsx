@@ -1,15 +1,15 @@
-import Gif from "../../../assets/demo.gif";
+// import Gif from "../../../assets/demo.gif";
 
 import { gameFeatures } from "./demo-data";
 
 export function Demo() {
   return (
     <div className="max-w-screen-md my-10 mx-auto">
-      <img
+      {/* <img
         src={Gif}
         alt="Demo of how the game looks like"
         className="w-full h-full object-cover rounded-sm border shadow-lg"
-      />
+      /> */}
       <div>
         <div className="my-8 border-b-2">
           <h2 className="text-xl font-bold leading-10 text-zinc-800">
