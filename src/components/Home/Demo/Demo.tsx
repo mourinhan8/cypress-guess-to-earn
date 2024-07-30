@@ -21,11 +21,12 @@ export function Demo() {
             <li key={index} className="text-zinc-500 leading-7">
               <span className="font-bold text-zinc-800 ">{feature.title}</span>
               <br />
-              {feature.description}
+              <p dangerouslySetInnerHTML={{ __html: feature.description }} />
+              {/* {feature.description} */}
             </li>
           ))}
         </ul>
       </div>
     </div>
-  );
+  )
 }

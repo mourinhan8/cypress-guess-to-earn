@@ -16,7 +16,7 @@ export function Price() {
   return (
     <div className="relative mx-auto bg-white max-w-4xl h-[180px] rounded-xl mb-4 p-4 shadow-md flex justify-center w-[400px] border">
       <span className="absolute top-4 left-4 text-md font-semibold text-zinc-800">
-        $CP price in USD
+        <span className="text-blue-500">$CP</span> price in USD
       </span>
       <span
         aria-live="polite"
