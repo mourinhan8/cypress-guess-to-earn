@@ -186,7 +186,7 @@ export function GuessButtons({ socket }: {socket: any}) {
       : "0px -2px #3150bd",
   }
 
-  const buttonClassesMin = `relative px-5 py-2 m-2 float-left rounded-lg text-white text-lg shadow-md ease-in duration-200 w-[150px] ${
+  const buttonClassesMin = `relative px-5 py-2 m-2 float-left rounded-lg text-white text-lg shadow-md ease-in duration-200 w-full ${
     isSelectedMinButton
       ? "bg-greenPrimary pointer-events-none opacity-80"
       : // : isGuessingByMin
@@ -204,15 +204,15 @@ export function GuessButtons({ socket }: {socket: any}) {
 
   return (
     <div className="border relative mx-auto bg-white w-[400px] h-[100px] rounded-xl p-4 shadow-md flex justify-between">
-      <div className="relative">
+      <div className="relative w-full">
         <button
           style={buttonStylesMin}
-          aria-label="Up in 1 minutes"
+          aria-label="Guess"
           onClick={() => handleGuessByMin()}
           disabled={isGuessingByMin}
           className={buttonClassesMin}
         >
-          ⬆️ after 1 min
+          Guess
         </button>
         {minuteCountdown && (
           <div className="absolute inset-y-1/3 left-1/2 transform -translate-x-1/2">
@@ -238,7 +238,7 @@ export function GuessButtons({ socket }: {socket: any}) {
           </div>
         )}
       </div>
-      <div className="relative">
+      {/* <div className="relative">
         <button
           style={buttonStylesDay}
           aria-label="Up in 1 day"
@@ -271,7 +271,7 @@ export function GuessButtons({ socket }: {socket: any}) {
             </CountdownCircleTimer>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }

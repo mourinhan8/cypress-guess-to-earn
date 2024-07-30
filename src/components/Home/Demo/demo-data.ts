@@ -17,6 +17,10 @@ export const gameFeatures = [
   //     "After you make a guess, you have to wait for 5 seconds to see if you're right or not.",
   // },
   {
+    title: "🛠️ How it work",
+    description: "This game is super easy! Simply sign in with your Web3 wallet and guess when the price of the Cypress token ($CP) will rise. You can make guesses every minute and find out in just one minute if you were right.<br /><b>Supported Wallets:</b> Nova, Subwallet, Metamask, Rabby"
+  },
+  {
     title: "🚫 One Guess Only",
     description:
       "To keep the game fair, you can only make one guess at a time. You can guess again only after your current guess is done.",
