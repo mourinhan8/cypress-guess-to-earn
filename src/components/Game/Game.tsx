@@ -12,10 +12,13 @@ import { APP_TOKEN_KEY } from "../../common/constants"
 import { displayToast } from "../../library/toast-manager"
 import loseSound from "../../assets/sounds/lose.wav"
 import winSound from "../../assets/sounds/win.wav"
+import { useAuthContext } from "../../library/AppAuthContext"
+import { User } from "../../common/types"
 const winSoundElement = new Audio(winSound)
 const loseSoundElement = new Audio(loseSound)
 export default function Game() {
   const { setBtcPrice, setNewBtcPrice } = useStore()
+  const { user, setUser } = useAuthContext()
   // const { id } = useParams()
   const socketRef = useRef<any>()
   const token = localStorage.getItem(APP_TOKEN_KEY)
@@ -32,13 +35,23 @@ export default function Game() {
     })
     socketRef.current.on("guessResult", (data: any) => {
       console.log(data)
-      const { message, result } = data
+      const { message, result, userScore } = data
       if (result === "win") {
         displayToast("success", message)
+        setUser({
+          ...user,
+          score: userScore,
+        } as User)
         winSoundElement.play()
-      } else {
+      } else if (result === "lose") {
         displayToast("error", message)
         loseSoundElement.play()
+      } else {
+        displayToast("success", message)
+        setUser({
+          ...user,
+          score: userScore,
+        } as User)
       }
     })
     socketRef.current.on("guessSuccess", (data: any) => {

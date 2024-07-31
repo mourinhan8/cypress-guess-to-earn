@@ -3,7 +3,7 @@ export const gameFeatures = [
     title: "🌐 Live Market Data",
     description:
       `
-      Our game uses the latest Cypress prices from this liquidity pool that has existed since 2022: <a style="color: #3b71d7" target="_blank" href="https://www.geckoterminal.com/glmr/pools/0x302c5c4eb1b7b28017e4231cc1a75c577fca0d60">https://www.geckoterminal.com/glmr/pools/0x302c5c4eb1b7b28017e4231cc1a75c577fca0d60</a>. This means your guesses are based on what's happening in the market right now.
+      Our game uses the latest Cypress prices from this liquidity pool that has existed since 2022: <a style="color: #3b71d7" target="_blank" href="https://www.geckoterminal.com/glmr/pools/0x302c5c4eb1b7b28017e4231cc1a75c577fca0d60">https://www.geckoterminal.com/glmr/pools/0x302c5c4eb1b7b28017e4231cc1a75c577fca0d60</a> and <a style="color: #3b71d7" target="_blank" href="https://www.geckoterminal.com/glmr/pools/0x9873bea5533484a0ad6224f20cf16054562951f1">https://www.geckoterminal.com/glmr/pools/0x9873bea5533484a0ad6224f20cf16054562951f1</a>. This means your guesses are based on what's happening in the market right now.
       `,
   },
   {

@@ -205,12 +205,12 @@ export function GuessButtons({ socket }: {socket: any}) {
       <div className="relative w-full flex items-center">
         <button
           style={buttonStylesMin}
-          aria-label="Guess"
+          aria-label="Increase after 1 minute"
           onClick={() => handleGuessByMin()}
           disabled={isGuessingByMin}
           className={buttonClassesMin}
         >
-          Guess
+          Increase after 1 minute
         </button>
         {minuteCountdown && (
           <div className="absolute inset-y-1/3 left-1/2 transform -translate-x-1/2">

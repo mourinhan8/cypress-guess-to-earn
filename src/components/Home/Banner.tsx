@@ -111,8 +111,10 @@ export function Banner() {
           } else {
             if (isConnected) {
               disconnect()
+              displayToast("error", "Your session has expired. Please login again!")
+            } else {
+              displayToast("error", "Please login first!")
             }
-            displayToast("error", "Please login first")
             navigate("/")
           }
         }}
