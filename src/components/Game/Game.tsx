@@ -92,7 +92,7 @@ export default function Game() {
         <GoHomeButton />
         <Instructions />
       </div>
-      <UserInfo />
+      <UserInfo user={user} />
       <Price />
       {/* <div className="mx-auto bg-white w-[400px] rounded-xl p-4 shadow-md flex justify-center mb-4 border">
         <Timer id={id} />
