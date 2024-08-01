@@ -29,6 +29,7 @@ export default function Game() {
         token,
       },
       path: "/queue/socket.io",
+      transports: ["websocket"],
       secure: true,
     })
     socketRef.current.on("userConnected", () => {
