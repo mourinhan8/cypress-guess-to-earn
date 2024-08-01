@@ -28,7 +28,7 @@ export default function Game() {
       auth: {
         token,
       },
-      path: "/queue/socket.io/",
+      path: "/queue/socket.io",
       secure: true,
     })
     socketRef.current.on("userConnected", () => {
