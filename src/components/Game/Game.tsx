@@ -25,10 +25,10 @@ export default function Game() {
 
   useEffect(() => {
     socketRef.current = io(import.meta.env.VITE_APP_SOCKET_URL, {
+      path: "/queue/socket.io",
       auth: {
         token,
       },
-      path: "/queue/socket.io",
       transports: ["websocket"],
       secure: true,
     })
