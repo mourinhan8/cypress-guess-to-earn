@@ -1,7 +1,6 @@
 import { useGoogleLogin } from "@react-oauth/google"
 import { AxiosResponse } from "axios"
 import axios from "../../common/axios"
-import { useState } from "react"
 import { APP_TOKEN_KEY } from "../../common/constants"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
@@ -10,15 +9,15 @@ interface AuthResponse {
   accessToken: string
 }
 
-interface User {
-  _id: string
-  name: string
-  email: string
-  avatar: string
-}
+// interface User {
+//   _id: string
+//   name: string
+//   email: string
+//   avatar: string
+// }
 
 export function LoginForm() {
-  const { state, dispatch } = useAuth()
+  const { dispatch } = useAuth()
   const navigate = useNavigate()
 
   const getUserInfo = async () => {
