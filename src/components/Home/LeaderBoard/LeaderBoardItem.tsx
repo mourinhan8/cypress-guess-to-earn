@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import { User } from "../../../common/types";
-import { useAuthContext } from "../../../library/AppAuthContext";
-import { compactString } from "../../../common/utils";
-
+import { useEffect, useState } from "react"
+import { User } from "../../../common/types"
+import { compactString } from "../../../common/utils"
+import { useAuth } from "../../../context/AuthContext"
 
 export function LeaderBoardItem({
   player,
   index,
 }: {
-  player: User;
-  index: number;
+  player: User
+  index: number
 }) {
-  const { user } = useAuthContext();
+  const { state } = useAuth()
   const [shortenedWalletAddress, setShortenedWalletAddress] = useState("")
 
   useEffect(() => {
@@ -27,20 +26,20 @@ export function LeaderBoardItem({
     return () => window.removeEventListener("resize", updateWalletAddress)
   }, [player.walletAddress])
 
-  const walletAddress = user
-    ? user.id === player.id
+  const walletAddress = state.isAuthenticated
+    ? state.profile._id === player.id
       ? "You"
       : shortenedWalletAddress
     : shortenedWalletAddress
 
   const MedalEmoji = ({ index }: { index: number }) => {
-    const medals = ["🥇", "🥈", "🥉"];
+    const medals = ["🥇", "🥈", "🥉"]
     return (
       <span className={index < 3 ? "text-3xl" : "text-md"}>
         {index < 3 ? medals[index] : `#${index + 1}`}
       </span>
-    );
-  };
+    )
+  }
 
   return (
     <div className="w-full bg-white rounded border my-3">

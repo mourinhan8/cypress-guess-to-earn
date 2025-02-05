@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { CloseIcon, QuestionIcon } from "../../assets/icons";
-import Modal from "@mui/material/Modal";
+import { useState } from "react"
+import { CloseIcon, QuestionIcon } from "../../assets/icons"
+import Modal from "@mui/material/Modal"
 
 export function Instructions() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <>
@@ -33,22 +33,20 @@ export function Instructions() {
             className="text-xl font-semibold text-zinc-800 py-2.5 border-b-2 border-gray-200"
             id="modal-modal-title"
           >
-            How to Play:
+            How to Play BTC Predictor:
           </h1>
           <ul
             id="modal-modal-description"
             className="flex flex-col pt-5 gap-2.5"
           >
-            <li>
-              Guess if Cypress's price will go "up" in 1 minute.
-            </li>
-            <li>After guessing, wait for 60 seconds to see if you're right.</li>
-            <li>Correct guess adds 10 point.</li>
+            <li>Guess if BTC's price will go "up" or "down" in 5 seconds.</li>
+            <li>After guessing, wait for 5 seconds to see if you're right.</li>
+            <li>Correct guess adds 1 point, wrong guess removes 1.</li>
             <li>Can't guess again until the last guess is done.</li>
             <li>Your score starts at 0 and is saved for next time.</li>
           </ul>
         </div>
       </Modal>
     </>
-  );
+  )
 }

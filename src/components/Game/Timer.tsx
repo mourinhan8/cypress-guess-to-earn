@@ -1,29 +1,23 @@
-import { useEffect } from "react";
-import { useStore } from "../../library/state-manager";
+import { useEffect } from "react"
+import useStore from "../../library/state-manager"
 
 export function Timer({ id }: { id?: string }) {
-  const { btcPrice, newBtcPrice, timeRemaining, setGameState } =
-    useStore();
+  const { btcPrice, newBtcPrice, guess, timeRemaining, setGuessingState } =
+    useStore()
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (timeRemaining > 0) {
-        setGameState("countdown")
+        setGuessingState("countdown")
       } else {
-        setGameState(
-          "end",
-          // false,
-          // false,
-          btcPrice,
-          newBtcPrice,
-          id)
+        setGuessingState("guess", guess, btcPrice, newBtcPrice, id)
       }
-    }, 1000);
+    }, 1000)
 
     return () => {
-      clearInterval(interval);
-    };
-  }, [timeRemaining, btcPrice, newBtcPrice]);
+      clearInterval(interval)
+    }
+  }, [timeRemaining, guess, btcPrice, newBtcPrice])
 
   return (
     <p aria-live="polite" className="font-semibold">
@@ -32,5 +26,5 @@ export function Timer({ id }: { id?: string }) {
         {timeRemaining}
       </span>
     </p>
-  );
+  )
 }

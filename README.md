@@ -1,10 +1,10 @@
-## 💰 $CP Predictor
+## 💰 BTC Predictor
 
-A game where you can guess if the price of Cypress token (CP/USD) will be higher or lower after 5 seconds. It uses real Cypress prices from trusted online sources and updates in real-time.
+A game where you can guess if the price of BTC (CP/USD) will be higher or lower after 5 seconds. It uses real BTC prices from trusted online sources and updates in real-time.
 
 ## 🎲 How to play it
 
-- You'll guess whether the price of Cypress will be higher or lower after 5 seconds by clicking the buttons:
+- You'll guess whether the price of BTC will be higher or lower after 5 seconds by clicking the buttons:
 
   - "Up" button for price going up.
   - "Down" button for price going down.
@@ -33,7 +33,6 @@ A game where you can guess if the price of Cypress token (CP/USD) will be higher
 - `Vite`
 - `React.js`
 - `TypeScript`
-- `Firebase`
 - `Zustand`
 - `Tailwind CSS`
 - `Playwright`

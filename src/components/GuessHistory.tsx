@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { CloseIcon, HistoryIcon } from "../assets/icons"
 import Modal from "@mui/material/Modal"
-import { useAuthContext } from "../library/AppAuthContext"
 import { APP_TOKEN_KEY } from "../common/constants"
-
+import { useAuth } from "../context/AuthContext"
 
 const records = [
   {
@@ -39,7 +38,7 @@ const records = [
 ]
 
 export function GuessHistory() {
-  const { user } = useAuthContext()
+  const { state } = useAuth()
   const [open, setOpen] = useState(false)
   const [_, setListGuessed] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -65,12 +64,12 @@ export function GuessHistory() {
         console.log(error)
       }
     }
-    if (!isLoaded && user) {
+    if (!isLoaded && state.isAuthenticated) {
       fetchListGuessed()
     }
-  }, [isLoaded, user])
+  }, [isLoaded, state.isAuthenticated])
 
-  if (!user || !token) {
+  if (!state.isAuthenticated || !token) {
     return null
   }
 
